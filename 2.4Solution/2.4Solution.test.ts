@@ -33,6 +33,7 @@ describe("Employee Manager 1.2", () => {
     });
     afterAll(async () => {
         await driver.quit();
+       
     });
     describe("handles unsaved, canceled, and saved changes correctly", () => {
         test("An unsaved change doesn't persist", async () => {
@@ -156,14 +157,14 @@ describe("Employee Manager 1.2", () => {
             await driver.findElement(bernice).click();
             await driver.wait(
                 until.elementIsVisible(await driver.findElement(nameInput))
-            );
+                );
             await driver.findElement(nameInput).clear();
             await driver.findElement(nameInput).sendKeys(Key.SPACE, Key.BACK_SPACE);
             await driver.findElement(saveButton).click();
             await driver.wait(until.elementLocated(errorCard));
             expect(await (await driver.findElement(errorCard)).getText()).toBe(
                 "The name field must be between 1 and 30 characters long."
-            );
+            ); 
             await driver.findElement(nameInput).sendKeys(Key.SPACE);
             await driver.findElement(cancelButton).click();
             driver.wait(() => true, 500);
