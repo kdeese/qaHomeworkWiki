@@ -7,7 +7,16 @@ import {
     WebElement,
     Key,
 } from "selenium-webdriver";
+//These are the packages that we need to import from selenium
+/*
+Builder builds a new instants of chrome when used with chromedriver
+Allowing testers to work on a real time application environment
+Capabilities allows testers to use chrome capabilities with the browser
+By allows the tester to access elements on the web page using the DOM or
 
+Webdriver is what we use to access the DOM in order to complete tasks
+Webelement is the same as webdriver ust element specific
+Key or Keys is just the keys on the keyboard this allows for typing in inputs or hittin common keys
 const chromedriver = require("chromedriver");
 
 const driver: WebDriver = new Builder()
